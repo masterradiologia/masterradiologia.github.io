@@ -54,7 +54,7 @@ const committeeMembers = [
   { name: "Carlo Cosentino", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – IBIO-01/A, Università Magna Graecia di Catanzaro" },
   { name: "Valentina Corino", role: "Consiglio Scientifico", affiliation: "Prof.ssa Associato – IBIO-01/A, Politecnico di Milano e IRCSS Monzino" },
   { name: "Carlo Morabito", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – IIET-01/A, Università Mediterranea di Reggio-Calabria" },
-  { name: "Francesco Calimeri", role: "Consiglio Scientifico", affiliation: "Prof. Associato – INFO-01/A, DEMACS - Università della Calabria" },
+  { name: "Francesco Calimeri", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – INFO-01/A, DEMACS - Università della Calabria" },
   { name: "Antonio Armentano", role: "Consiglio Scientifico", affiliation: "Dirigente II livello, Grande Ospedale Metropolitano di Reggio Calabria" },
   { name: "Michele Florio", role: "Consiglio Scientifico", affiliation: "Direttore del Reparto Radiologia, Ospedale Annunziata di Cosenza" },
   { name: "Palmino Sacco", role: "Consiglio Scientifico", affiliation: "Direttore UOS Ecografia, Azienda Ospedaliera Universitaria Senese" },
