@@ -17,7 +17,8 @@ import {
   Dna,
   Clock,
   Award,
-  FileText
+  FileText,
+  Handshake
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -43,23 +44,39 @@ const navItems = [
   { label: "Introduzione", href: "#intro" },
   { label: "Comitato Scientifico", href: "#committee" },
   { label: "Organizzazione Corsi", href: "#courses" },
+  { label: "Sponsor & Patrocini", href: "#sponsor" },
 ];
 
 const committeeMembers = [
   { name: "Giancarlo Fortino", role: "Direttore del Master", affiliation: "Prof. Ordinario – IINF-05/A, DIMES - Università della Calabria", isDirector: true },
+  { name: "Sandra Costanzo", role: "Co-Direttrice del Master", affiliation: "Prof.ssa Ordinario – IINF-02/A, DIMES - Università della Calabria", isDirector: true },
   { name: "Marcello Maggiolini", role: "Comitato Proponente", affiliation: "Prof. Ordinario – MEDS-02/A, DFSSN - Università della Calabria" },
   { name: "Antonella Guzzo", role: "Comitato Proponente", affiliation: "Prof.ssa Associato – IINF-05/A, DIMES - Università della Calabria" },
-  { name: "Sandra Costanzo", role: "Comitato Proponente", affiliation: "Prof.ssa Ordinario – IINF-02/A, DIMES - Università della Calabria" },
   { name: "Antonello Vidiri", role: "Consiglio Scientifico", affiliation: "Direttore Dipartimento Ricerca e Tecnologie Avanzate, IRCSS Regina Elena, Roma" },
   { name: "Carlo Cosentino", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – IBIO-01/A, Università Magna Graecia di Catanzaro" },
   { name: "Valentina Corino", role: "Consiglio Scientifico", affiliation: "Prof.ssa Associato – IBIO-01/A, Politecnico di Milano e IRCSS Monzino" },
   { name: "Carlo Morabito", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – IIET-01/A, Università Mediterranea di Reggio-Calabria" },
-  { name: "Francesco Calimeri", role: "Consiglio Scientifico", affiliation: "Prof. Associato – INFO-01/A, DEMACS - Università della Calabria" },
+  { name: "Francesco Calimeri", role: "Consiglio Scientifico", affiliation: "Prof. Ordinario – INFO-01/A, DEMACS - Università della Calabria" },
   { name: "Antonio Armentano", role: "Consiglio Scientifico", affiliation: "Dirigente II livello, Grande Ospedale Metropolitano di Reggio Calabria" },
   { name: "Michele Florio", role: "Consiglio Scientifico", affiliation: "Direttore del Reparto Radiologia, Ospedale Annunziata di Cosenza" },
   { name: "Palmino Sacco", role: "Consiglio Scientifico", affiliation: "Direttore UOS Ecografia, Azienda Ospedaliera Universitaria Senese" },
   { name: "Riccardo Ferrari", role: "Consiglio Scientifico", affiliation: "Dirigente Medico Radiologo, Azienda Ospedaliera San Camillo-Forlanini" },
   { name: "Lorenzo Faggioni", role: "Consiglio Scientifico", affiliation: "Prof. Associato – MEDS-22/A, Università di Pisa" },
+];
+
+const sponsors = [
+  { name: "IRCCS Monzino", logo: "/loghi/image1.png" },
+  { name: "Università di Pisa", logo: "/loghi/image2.jpeg" },
+  { name: "Azienda Ospedaliera Universitaria Senese", logo: "/loghi/image3.png" },
+  { name: "Azienda Ospedaliera San Camillo-Forlanini", logo: "/loghi/image4.png" },
+  { name: "Azienda Ospedaliera Annunziata di Cosenza", logo: "/loghi/image5.jpeg" },
+  { name: "GOM Reggio Calabria", logo: "/loghi/image6.jpeg" },
+  { name: "Università Magna Graecia di Catanzaro", logo: "/loghi/image7.jpeg" },
+  { name: "IRCCS Regina Elena", logo: "/loghi/image8.png" },
+];
+
+const patrocini = [
+  { name: "Società Italiana di Radiologia Medica e Interventistica (SIRM)", logo: "/loghi/image9.png" },
 ];
 
 const courses = [
@@ -732,6 +749,85 @@ const StudentsSection = () => (
   </section>
 );
 
+// Sponsor & Patrocini Section
+const SponsorSection = () => (
+  <section id="sponsor" className="py-16 lg:py-24 bg-white" data-testid="sponsor-section">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-12">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="p-2 bg-cyan-100 rounded-lg">
+            <Handshake className="w-6 h-6 text-cyan-600" />
+          </div>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900">
+            Sponsor & Patrocini
+          </h2>
+        </div>
+        <p className="text-slate-600 max-w-2xl mx-auto">
+          Enti, aziende ed istituzioni che sostengono il Master
+        </p>
+      </div>
+
+      {/* Sponsor */}
+      <div className="mb-16">
+        <h3 className="font-heading font-bold text-xl text-slate-900 mb-8 text-center flex items-center justify-center gap-3">
+          <div className="w-12 h-0.5 bg-cyan-500"></div>
+          Sponsor
+          <div className="w-12 h-0.5 bg-cyan-500"></div>
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          {sponsors.map((sponsor, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col items-center justify-between gap-4 card-hover min-h-[200px]"
+              data-testid={`sponsor-${index}`}
+            >
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img 
+                  src={sponsor.logo} 
+                  alt={sponsor.name} 
+                  className="max-h-20 max-w-full object-contain"
+                />
+              </div>
+              <p className="text-xs sm:text-sm font-medium text-slate-700 text-center leading-tight">
+                {sponsor.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Patrocini */}
+      <div>
+        <h3 className="font-heading font-bold text-xl text-slate-900 mb-8 text-center flex items-center justify-center gap-3">
+          <div className="w-12 h-0.5 bg-indigo-500"></div>
+          Patrocinio
+          <div className="w-12 h-0.5 bg-indigo-500"></div>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {patrocini.map((p, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-6 rounded-xl border-2 border-indigo-100 flex flex-col items-center justify-between gap-4 card-hover min-h-[220px] sm:col-span-2 max-w-md mx-auto w-full"
+              data-testid={`patrocinio-${index}`}
+            >
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img 
+                  src={p.logo} 
+                  alt={p.name} 
+                  className="max-h-32 max-w-full object-contain"
+                />
+              </div>
+              <p className="text-sm font-medium text-slate-700 text-center leading-tight">
+                {p.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 // Iscrizioni Banner Section
 const IscrizioniBanner = () => (
   <section className="py-12 lg:py-16 bg-gradient-to-r from-cyan-500 to-indigo-600" data-testid="iscrizioni-banner">
@@ -878,6 +974,7 @@ const LandingPage = () => {
         <IntroSection />
         <CommitteeSection />
         <CoursesSection />
+        <SponsorSection />
         <IscrizioniBanner />
       </main>
       <Footer />
